@@ -1,6 +1,5 @@
-import { getDiffInHours } from "../src/index";
-import { hexToRGB } from "../src/index";
-import { Player, modifyFirstName } from "../src/player";
+import { getDiffInHours, hexToRGB, hexToRGB2 } from "../src/index";
+import { Player, modify } from "../src/player";
 
 describe("testing pure functions", () => {
   test("difference of two dates in hours", () => {
@@ -17,9 +16,46 @@ describe("testing pure functions", () => {
   });
 });
 
-// describe('testing pure functions', () => {
-//     test('determining the foreground/text color'), () => {
-//         let color1 = '3A3B3C'
-//         expect(hexToRGB2(color1)).toBe('#000000');
-//     }
-// })
+describe("testing pure functions", () => {
+  test.todo("determining the foreground/text color"),
+    () => {
+      let color1 = "#96ff32";
+      expect(hexToRGB2(color1)).toBe("#000000");
+    };
+});
+
+// describe("Player", () => {
+//   it("modifies the first name", () => {
+//     const originalPlayers: Player[] = [
+//       {
+//         firstName: "Lebron",
+//         lastName: "James",
+//         number: 6,
+//         age: 37,
+//       },
+//       {
+//         firstName: "Anthony",
+//         lastName: "Davis",
+//         number: 3,
+//         age: 29,
+//       },
+//     ];
+
+//     const newPlayers = modify(originalPlayers, 6, "Lebron Raymone Sr.");
+
+//     expect(newPlayers).toStrictEqual([
+//       {
+//         firstName: "Lebron Raymone",
+//         lastName: "James",
+//         number: 6,
+//         age: 37,
+//       },
+//       {
+//         firstName: "Anthony",
+//         lastName: "Davis",
+//         number: 3,
+//         age: 29,
+//       },
+//     ]);
+//   });
+// });

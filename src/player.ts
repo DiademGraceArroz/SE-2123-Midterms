@@ -1,22 +1,22 @@
 export type Player = Readonly<{
   firstName: string;
   lastName: string;
-  jerseyNumber: number; // actually string because of "00"
+  number: number;
   age: number;
 }>;
 
 const player: Player = {
-  firstName: "LeBron",
+  firstName: "Lebron",
   lastName: "James",
-  jerseyNumber: 23,
-  age: 35,
+  number: 6,
+  age: 37,
 };
 
-export const modifyFirstName = (
+export const modify = (
   players: Readonly<Player[]>,
-  jerseyNumber: number,
+  number: number,
   firstName: string
 ): Readonly<Player[]> =>
   players.map((player) =>
-    player.jerseyNumber === jerseyNumber ? { ...player, firstName } : player
+    player.number === number ? { ...player, firstName } : player
   );
