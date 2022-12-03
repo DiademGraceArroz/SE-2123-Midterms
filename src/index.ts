@@ -10,24 +10,24 @@ export function getDiffInHours(date1: Date, date2: Date) {
 }
 
 export function hexToRGB(color: string): number {
-    const hex = color.split('');
-    const result = (parseInt(hex[0], 16) * 16) + parseInt(hex[1], 16);
-    return result;
+  const hex = color.split("");
+  const result = parseInt(hex[0], 16) * 16 + parseInt(hex[1], 16);
+  return result;
 }
 
-export function hexToRGB2(color1: string) {
-    const hex = color1.match(/.{1,2}/g);
-    const rgb = [
-        parseInt(hex![0], 16),
-        parseInt(hex![1], 16),
-        parseInt(hex![2], 16),
-    ];
+export function hexToRGB2(color: string): string {
+  const hex = color.match(/.{1,2}/g);
+  let rgb = [
+    parseInt(hex![0], 16), //hex to R
+    parseInt(hex![1], 16), //hex to G
+    parseInt(hex![2], 16), //hex to B
+  ];
 
-    let result = ((rgb[0] * 0.299) + (rgb[1] * 0.587) + (rgb[2] * 0.114));
+  let result = ((rgb[0] * 0.299) + (rgb[1] * 0.587) + (rgb[2] * 0.114));
 
-    if (result > 186) {
-        return '#000000'
-    } else {
-        return '#ffffff'
-    }
+  if (result > 186) {
+    return "#000000";
+  } else {
+    return "#ffffff";
+  }
 }
